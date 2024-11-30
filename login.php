@@ -1,7 +1,6 @@
 <?php
     session_start();
     
-    
     if ($_SERVER['REQUEST_METHOD'] === 'GET') {
         if (isset($_SESSION['user'])) {
             header('Location: ./main.php');
@@ -10,9 +9,6 @@
     }
 
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-
-        echo "fdfsdf";
-        echo file_get_contents('php://input');
         
         $db = new mysqli("localhost", "root", "", "Maria");
         
@@ -30,7 +26,6 @@
             if ($user['pass'] === $password) { // Если пароли не хэшированы
                 $_SESSION['user'] = $user['username']; // Создаём сессию
                 header('Location: ./main.php');
-                echo "fdfsdf";
                 exit;
             }
         }

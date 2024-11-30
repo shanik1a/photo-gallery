@@ -9,3 +9,14 @@ CREATE TABLE IF NOT EXISTS Users (
 );
 
 INSERT INTO Users (username, pass) VALUES ('qwer', 'qwer');
+
+CREATE TABLE IF NOT EXISTS Images (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    user_id INT NOT NULL,
+    file_name VARCHAR(255) UNIQUE NOT NULL,
+    FOREIGN KEY (user_id) REFERENCES Users(id) ON DELETE CASCADE
+);
+
+SELECT * FROM Images;
+
+DELETE FROM Images;

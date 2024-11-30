@@ -11,5 +11,16 @@
 
         header('Location: ./main.html');
         exit;
+    } else if($_SERVER['REQUEST_METHOD'] === 'POST'){
+        if (!isset($_SESSION['user'])) {
+            http_response_code(403);
+            exit;
+        }
+        
+        $action = $_POST['action'] ?? '';
+        if($action === "exit") {
+            session_unset();
+            header('Location: ./login.php');
+        }
     }
 ?>

@@ -3,15 +3,12 @@ $("#login-button").on("click", () => {
         login: $("#val-login").val(),
         password: $("#val-password").val()
     })
-    $.post("./login.php", {
+    $.post("./index.php", {
+        isLogin: true,
         login: $("#val-login").val(),
         password: $("#val-password").val()
-    }, (data, status)=>{
-        if (typeof data === 'string' && data.trim().startsWith('<!DOCTYPE html>')) {
-            // Если сервер возвращает HTML-страницу
-            document.open();
-            document.write(data);
-            document.close();
-        }
+    }, (data)=>{
+        console.log(data)
+        if(data == "succes") document.location.reload()
     })
 })

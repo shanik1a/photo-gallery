@@ -38,7 +38,7 @@ input {
 }
 
 .bg {
-    position: absolute;
+    position: fixed;
     z-index: -1;
     background-image: url("back.png");
     width: 100vw;
@@ -76,4 +76,62 @@ input {
     padding-left: 1em;
     padding-right: 1em;
     text-align: center;
+}
+
+#exit-button {
+    position: fixed;
+    z-index: 1;
+    width: 4em;
+    top: 0.5em;
+    right: 0.5em;
+    background-color:rgb(139, 0, 0);
+    padding: 0.4em;
+    text-align: center;
+    transition: all 0.2s;
+}
+
+#exit-button:hover {
+    background-color:rgb(213, 17, 17);
+}
+
+#exit-button:active {
+    background-color:rgb(255, 66, 66);
+}
+
+#main-container {
+    width: 70vw;
+    margin-left: 15vw;
+    margin-right: 15vw;
+    background-color: rgba(193, 206, 206, 0.517);
+}
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 25%;
+    aspect-ratio: 1/1;
+}
+
+#gallery-area {
+    
+}
+
+.gallery-unit {
+    width: 100%;
+}
+
+#upload-button {
+    cursor: pointer;
+    background-color: rgb(139, 0, 0);
+    padding: 0.4em;
+    /* margin: 0.8em; */
+}
+
+#uploadButton {
+    outline: none;
+    border: none;
+    border-radius: 0;
+    background-color: rgb(139, 0, 0);
+    padding: 0.4em;
 }
