@@ -18,5 +18,6 @@ CREATE TABLE IF NOT EXISTS Images (
 );
 
 SELECT * FROM Images;
+SELECT * FROM Users;
 
 DELETE FROM Images;

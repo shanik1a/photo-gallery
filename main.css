@@ -1,8 +1,8 @@
 * {
-    color: azure;
+    color: #4b006e;
     margin: 0;
     padding: 0;
-    font-family: sans-serif;
+    font-family: Century;
     -ms-overflow-style: none;
     scrollbar-width: none;
     transition: all 0.5s;
@@ -19,8 +19,10 @@
 }
 
 #form{
+    border-radius: 7% 7% 7% 7%;
+    box-shadow: 0 7px 15px 0 rgb(0, 29, 133), 0 6px 35px 0 rgb(197, 0, 0);
     width: 15%;
-    background-color: darkred;
+    background-color: #ecffff;
     padding: 1em;
     position: absolute;
     left: 50%;
@@ -54,22 +56,22 @@ input {
 }
 
 #login-button {
-    background-color:darkblue;
+    background-color: #68d683;
     padding: 0.2em;
     text-align: center;
     transition: all 0.2s;
 }
 
 #login-button:hover {
-    background-color:rgb(17, 17, 213);
+    background-color: rgb(58, 174, 123);
 }
 
 #login-button:active {
-    background-color:rgb(66, 66, 255);
+    background-color: rgb(118, 255, 149);
 }
 
 #login-logo {
-    background-color:burlywood;
+    background-color: #df8ab2;
     margin-bottom: 1em;
     padding-bottom: 1em;
     padding-top: 1em;
@@ -84,25 +86,25 @@ input {
     width: 4em;
     top: 0.5em;
     right: 0.5em;
-    background-color:rgb(139, 0, 0);
+    background-color: rgb(255, 154, 66);
     padding: 0.4em;
     text-align: center;
     transition: all 0.2s;
 }
 
 #exit-button:hover {
-    background-color:rgb(213, 17, 17);
+    background-color: rgb(255, 114, 20);
 }
 
 #exit-button:active {
-    background-color:rgb(255, 66, 66);
+    background-color: rgb(200, 77, 0);
 }
 
 #main-container {
     width: 70vw;
     margin-left: 15vw;
     margin-right: 15vw;
-    background-color: rgba(193, 206, 206, 0.517);
+    background-color: rgba(219, 255, 255, 0.44);
 }
 
 .center {
@@ -114,7 +116,8 @@ input {
 }
 
 #gallery-area {
-    
+    display:grid;
+    grid-template-columns: repeat(5, 1fr);
 }
 
 .gallery-unit {
@@ -123,15 +126,15 @@ input {
 
 #upload-button {
     cursor: pointer;
-    background-color: rgb(139, 0, 0);
+    background-color: rgb(72, 233, 243);
     padding: 0.4em;
-    /* margin: 0.8em; */
+    margin: 1em;
 }
 
 #uploadButton {
     outline: none;
     border: none;
     border-radius: 0;
-    background-color: rgb(139, 0, 0);
+    background-color: rgb(179, 255, 126);
     padding: 0.4em;
 }

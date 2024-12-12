@@ -2,7 +2,7 @@ function loadImages(){
     $.post( './index.php',{
         isGetImgs: true
     }, (data)=>{
-        var imgsList = data.slice(4, -4).split("\"],[\"");
+        var imgsList = JSON.parse(data);   // <-- Тут были изменения
         var holder = document.getElementById('gallery-area')
         holder.innerHTML = ''
         imgsList.forEach(img => {

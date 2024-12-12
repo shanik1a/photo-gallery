@@ -40,7 +40,7 @@
             $user = $db->query($query)->fetch_assoc();
             $user_id = $user["id"];
             $query = "SELECT file_name FROM Images WHERE user_id = $user_id";
-            echo var_export(json_encode($db->query($query)->fetch_all()), true);
+            echo json_encode($db->query($query)->fetch_all()); // <-- Тут были изменения
             exit;
         }
         if (isset($_FILES['image']) && $_FILES['image']['error'] === UPLOAD_ERR_OK && isset($_SESSION['user'])) {
@@ -65,6 +65,9 @@
             }
         }
     }
-
+$db = new mysqli("localhost", "root", "", "Maria");
+if ($db->connect_error) {
+    die("Connection failed: " . $db->connect_error);
+}
 
 ?>
