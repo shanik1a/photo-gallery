@@ -10,5 +10,6 @@ $("#login-button").on("click", () => {
     }, (data)=>{
         console.log(data)
         if(data == "success") document.location.reload()
+        else alert("Невірний логін або пароль")
     })
 })
