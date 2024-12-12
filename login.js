@@ -9,6 +9,6 @@ $("#login-button").on("click", () => {
         password: $("#val-password").val()
     }, (data)=>{
         console.log(data)
-        if(data == "succes") document.location.reload()
+        if(data == "success") document.location.reload()
     })
 })

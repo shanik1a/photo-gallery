@@ -20,11 +20,12 @@
                 
                 <div style="padding: 0.4em; margin-left: auto; margin-right: auto; width: 25%;">
                     <input type="file" accept="image/*" name="image" id="file" style="display: none;">
-                    <label for="file" id="upload-button">Завантажити зображення</label><br>
+                    <label for="file" id="upload-button">Завантажити зображення</label><br>
                 </div>
 
-                <div style="padding: 0.4em; margin-left: auto; margin-right: auto; width: 25%;">
-                    <button id="uploadButton" style="display: none;">Підтвердити відправку</button>
+                <div style="padding: 0.4em; margin-left: auto; margin-right: auto; width: 25%; display: none;" id="confirmUpload">
+                    <button id="uploadButton">Підтвердити відправку</button><br>
+                    <input type="text" id="caption" placeholder="Заголовок">
                 </div>
             </div>
         </div>

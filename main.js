@@ -3,15 +3,31 @@ function loadImages(){
         isGetImgs: true
     }, (data)=>{
         var imgsList = JSON.parse(data);   // <-- Тут были изменения
+        console.log(imgsList)
         var holder = document.getElementById('gallery-area')
         holder.innerHTML = ''
         imgsList.forEach(img => {
             holder.innerHTML += `
-                <img class="gallery-unit" src="./uploads/${img}"><br>
+                <div class="grid-el" style="background-image: url('./uploads/${img[0]}')">
+                    <p class="caption">${img[1]}</p>
+                </div>
             `
         });
     });
 }
+
+$(document).on('click', '.grid-el', (event) => {
+    event.stopPropagation();
+    event.stopImmediatePropagation();
+
+    const target = $(event.currentTarget);
+    if (target.hasClass('change-fs')) {
+        target.removeClass('change-fs');
+    } else {
+        target.addClass('change-fs');
+    }
+});
+
 
 loadImages()
 
@@ -26,7 +42,7 @@ $('#file').on('change', function (event) {
     var image = document.getElementById('output');
     selectedFile = event.target.files[0];
     image.src = URL.createObjectURL(selectedFile);
-    $('#uploadButton').show(); // Показываем кнопку загрузки
+    $('#confirmUpload').show(); // Показываем кнопку загрузки
     $('#output').show();
 });
 
@@ -39,6 +55,7 @@ $('#uploadButton').on('click', function () {
 
     var formData = new FormData();
     formData.append('image', selectedFile);
+    formData.append('caption', $("#caption").val());
 
     $.ajax({
         url: './index.php', // Адрес PHP-скрипта
@@ -49,7 +66,7 @@ $('#uploadButton').on('click', function () {
         success: function (response) {
             console.log(response);
             $('#output').hide();
-            $('#uploadButton').hide();
+            $('#confirmUpload').hide();
             loadImages();
         },
         error: function (xhr, status, error) {

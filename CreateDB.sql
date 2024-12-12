@@ -5,14 +5,13 @@ USE Maria;
 CREATE TABLE IF NOT EXISTS Users (
    id INT PRIMARY KEY AUTO_INCREMENT,
    username VARCHAR(50),
-   pass VARCHAR(50)
+   pass VARCHAR(255)
 );
-
-INSERT INTO Users (username, pass) VALUES ('qwer', 'qwer');
 
 CREATE TABLE IF NOT EXISTS Images (
     id INT PRIMARY KEY AUTO_INCREMENT,
     user_id INT NOT NULL,
+    caption VARCHAR(255) NOT NULL,
     file_name VARCHAR(255) UNIQUE NOT NULL,
     FOREIGN KEY (user_id) REFERENCES Users(id) ON DELETE CASCADE
 );
@@ -21,3 +20,6 @@ SELECT * FROM Images;
 SELECT * FROM Users;
 
 DELETE FROM Images;
+
+DROP TABLE Images;
+DROP TABLE users;

@@ -117,11 +117,9 @@ input {
 
 #gallery-area {
     display:grid;
-    grid-template-columns: repeat(5, 1fr);
-}
-
-.gallery-unit {
-    width: 100%;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: 20vh;
+    align-content: start;
 }
 
 #upload-button {
@@ -137,4 +135,27 @@ input {
     border-radius: 0;
     background-color: rgb(179, 255, 126);
     padding: 0.4em;
+}
+
+.grid-el {
+    margin: auto;
+    text-align: center;
+    height: 20vh;
+    width: 100%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.change-fs {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    z-index: 9999;
+    top:0;
+    right: 0;
+}
+
+.caption {
+    background-color: #ecffffb2;
 }
